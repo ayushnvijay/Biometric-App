@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.event.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.Scanner;
 
 import javax.swing.*;

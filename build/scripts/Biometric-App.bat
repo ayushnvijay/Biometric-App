@@ -1,20 +1,20 @@
 @if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem
-@rem  Biometric-App startup script for Windows
+@rem  biometric-app startup script for Windows
 @rem
 @rem ##########################################################################
 
 @rem Set local scope for the variables with windows NT shell
 if "%OS%"=="Windows_NT" setlocal
 
+@rem Add default JVM options here. You can also use JAVA_OPTS and BIOMETRIC_APP_OPTS to pass JVM options to this script.
+set DEFAULT_JVM_OPTS=
+
 set DIRNAME=%~dp0
 if "%DIRNAME%" == "" set DIRNAME=.
 set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%..
-
-@rem Add default JVM options here. You can also use JAVA_OPTS and BIOMETRIC_APP_OPTS to pass JVM options to this script.
-set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
@@ -46,7 +46,7 @@ echo location of your Java installation.
 goto fail
 
 :init
-@rem Get command-line arguments, handling Windows variants
+@rem Get command-line arguments, handling Windowz variants
 
 if not "%OS%" == "Windows_NT" goto win9xME_args
 if "%@eval[2+2]" == "4" goto 4NT_args
@@ -69,9 +69,9 @@ set CMD_LINE_ARGS=%$
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\Biometric-App.jar;%APP_HOME%\lib\rxjava-1.1.7.jar;%APP_HOME%\lib\gson-2.3.1.jar
+set CLASSPATH=%APP_HOME%\lib\biometric-app-1.0-SNAPSHOT.jar;%APP_HOME%\lib\rxjava-1.1.6.jar;%APP_HOME%\lib\gson-2.3.1.jar
 
-@rem Execute Biometric-App
+@rem Execute biometric-app
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %BIOMETRIC_APP_OPTS%  -classpath "%CLASSPATH%" biometric.KeyEventDemo %CMD_LINE_ARGS%
 
 :end
