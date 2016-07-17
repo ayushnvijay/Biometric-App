@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
+mainClassName = 'biometric.KeyEventDemo'
+task getHomeDir << {
+    println gradle.gradleHomeDir
+}
+
+repositories {
+    mavenCentral()
+}
+
+run {
+    standardInput = System.in
+
+}
+
+sourceCompatibility = 1.8
+
+dependencies{
+    compile 'io.reactivex:rxjava:1.1.7'
+    compile 'com.google.code.gson:gson:2.3.1'
+}
+group 'com.app.biometric'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
